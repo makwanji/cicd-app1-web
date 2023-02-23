@@ -1,20 +1,19 @@
 version: "3.7"
 services:
-    rts_app1_web:
+    rts-web:
         build:
             context: ./
             dockerfile: Dockerfile
-        image: php
-        container_name: rts_app1_web
+        image: rts-web:1.0
+        container_name: rts-web
         restart: unless-stopped
-        working_dir: /var/www/
+        working_dir: /var/www/rts-web
         ports:
             - "8080:80"
         volumes:
-            - ./:/var/www
+#            - ./:/var/www/rts-web
             - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
-        networks:
-            - "rts-app"
 networks:
-    rts-app:
-        driver: bridge
+    default:
+        external: true
+        name: cicd

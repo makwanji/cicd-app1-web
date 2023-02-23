@@ -19,7 +19,7 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-COPY ./var/www /var/www/html/rts-app1-web/
-
 # Set working directory
-# WORKDIR /var/www/html/rts-app1-web
+WORKDIR /var/www/rts-web
+
+COPY . /var/www/rts-web
