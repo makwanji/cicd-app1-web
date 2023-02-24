@@ -23,3 +23,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/rts-web
 
 COPY . /var/www/rts-web
+
+RUN a2enmod rewrite
+
+RUN service apache2 restart

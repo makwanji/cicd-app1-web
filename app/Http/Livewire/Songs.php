@@ -10,7 +10,7 @@ class Songs extends Component
     public $songs;
     public function getSongs()
     {
-        $this->songs = Http::get('http://127.0.0.1:8090/api/v1/songs')->json();
+        $this->songs = Http::get(env('API_URL').'/api/v1/songs')->json();
     }
 
     public function render()
