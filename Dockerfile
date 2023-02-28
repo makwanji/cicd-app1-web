@@ -27,3 +27,27 @@ COPY . /var/www/rts-web
 RUN a2enmod rewrite
 
 RUN service apache2 restart
+
+RUN composer install
+
+RUN cp .env.example .env
+
+RUN chmod -R 777 storage/
+
+RUN php artisan key:generate
+
+RUN curl -sL https://deb.nodesource.com/setup_19.x | bash
+
+RUN apt install nodejs
+
+RUN npm install
+
+RUN npm run build
+
+RUN chmod -R 777 bootstrap/cache/
+
+RUN composer require livewire/livewire
+
+RUN php artisan livewire:publish --config
+
+RUN php artisan livewire:publish --assets

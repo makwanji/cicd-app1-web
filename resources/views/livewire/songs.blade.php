@@ -1,4 +1,7 @@
 <div>
+    @if(session()->has('error'))
+        <div class="alert alert-danger">{{session()->get('error')}}</div>
+    @endif
     <button type="button" class="rounded-full bg-sky-500/100 px-2 py-2 text-black" wire:click='getSongs'>Get
         Songs
     </button>
