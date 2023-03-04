@@ -12,7 +12,7 @@ class Songs extends Component
     public function getSongs()
     {
         try {
-            $this->songs = Http::get(env('API_URL') . '/api/v1/songs')->json();
+            $this->songs = Http::get(env('APP_URL') . '/api/v1/songs')->json();
         } catch (Exception $e) {
             session()->flash('error', $e->getMessage());
         }
