@@ -24,6 +24,8 @@ WORKDIR /var/www/rts-web
 
 COPY . /var/www/rts-web
 
+COPY ./apache/default.conf /etc/apache2/sites-enabled/000-default.conf
+
 RUN a2enmod rewrite
 
 RUN service apache2 restart
