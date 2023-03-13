@@ -1,3 +1,4 @@
+---
 version: "3.7"
 services:
     rts-web:
@@ -10,8 +11,6 @@ services:
         working_dir: /var/www/rts-web
         ports:
             - "8080:80"
-        # volumes:
-            # - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
 networks:
     default:
         external: true
