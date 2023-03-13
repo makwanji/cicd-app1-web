@@ -1,4 +1,3 @@
----
 version: "3.7"
 services:
     rts-web:
@@ -11,6 +10,7 @@ services:
         working_dir: /var/www/rts-web
         ports:
             - "8080:80"
+
 networks:
     default:
         external: true
