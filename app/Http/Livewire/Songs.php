@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Songs extends Component
 {
-    public $songs;
+    public $songs = [];
     public function getSongs()
     {
         try {
