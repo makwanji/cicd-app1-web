@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ env('APP_NAME') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -19,10 +19,10 @@
 
 <body class="antialiased">
     <div class="flex justify-center">
-        <div class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700 min-w-full ">
+        <div class="block max-w-sm rounded-lg bg-white shadow-lg min-w-full ">
             <div class="p-6">
-                <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50 text-center bg-gray">
-                    Song List
+                <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 text-center bg-gray">
+                    Song List ({{ ucfirst(env('APP_ENV')) }})
                 </h5>
             </div>
             <livewire:songs />
