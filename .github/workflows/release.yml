@@ -4,6 +4,7 @@ name: release
   push:
     branches:
       - staging
+      - dev
     tags:
       - "[0-9]+.[0-9]+.[0-9]+"
 jobs:
